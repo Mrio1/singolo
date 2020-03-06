@@ -1,0 +1,248 @@
+@font-face {
+  font-family: "Lato-Bold";
+  src: url("./assets/fonts/Lato/Lato-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Black";
+  src: url("./assets/fonts/Lato/Lato-Black.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url("./assets/fonts/Lato/Lato-Light.ttf");
+}
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url("./assets/fonts/Lato/Lato-Regular.ttf");
+}
+
+body, div, section, ul, li, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.quote {
+  margin: 0 auto;
+  width: 1020px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 60px 37px 25px 40px;
+  border-bottom: 6px;
+  border-bottom-color: #ea676b;
+  background: #F06C64;
+}
+
+.quote--title {
+  letter-spacing: -0.2px;
+  font-family: "Lato-Black";
+  font-size: 30px;
+  color: #f0d8d9;
+}
+
+.quote--text {
+  margin-top: 17px;
+  margin-right: 2px;
+  font-family: "Lato-Light";
+  font-size: 18px;
+  line-height: 30px;
+  text-align: justify;
+  letter-spacing: -0.2px;
+  color: #F0D8D9;
+}
+
+.quote--flex_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.quote--form {
+  display: inline-block;
+  margin-top: 45px;
+}
+
+.quote--contact {
+  display: inline-block;
+  margin-top: 43px;
+}
+
+.quote_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 619px;
+}
+
+.quote_form--input {
+  height: 37.5px;
+  padding-left: 15px;
+  background-color: #D6564F;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+}
+
+.quote_form--input::-webkit-input-placeholder {
+  letter-spacing: 0.05px;
+  color: #f48c8f;
+}
+
+.quote_form--input:-ms-input-placeholder {
+  letter-spacing: 0.05px;
+  color: #f48c8f;
+}
+
+.quote_form--input::-ms-input-placeholder {
+  letter-spacing: 0.05px;
+  color: #f48c8f;
+}
+
+.quote_form--input::placeholder {
+  letter-spacing: 0.05px;
+  color: #f48c8f;
+}
+
+.quote_form--input:not(:nth-child(1)) {
+  margin-top: 16.5px;
+}
+
+.quote_form--input-large {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  resize: none;
+  height: 202px;
+  text-align: start;
+  padding-top: 10px;
+}
+
+.quote_form--input:valid {
+  background-color: #e2b00c;
+}
+
+.quote_form--input:invalid {
+  background-color: #d6564f;
+}
+
+.quote_form--button {
+  width: 200px;
+  margin-top: 15px;
+  border: 0px solid transparent;
+  border-radius: 5px;
+  background-color: #d6564f;
+  color: #f0d8d9;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.quote_form--button:hover {
+  background-color: #9b5b57;
+}
+
+.contact {
+  width: 303px;
+}
+
+.contact--title {
+  font-family: "Lato-Black";
+  font-size: 18px;
+  color: #f0d8d9;
+  letter-spacing: 0.1px;
+}
+
+.contact--text {
+  margin-top: 9px;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+  line-height: 21px;
+  color: #f0d8d9;
+  word-wrap: break-word;
+  text-align: justify;
+}
+
+.contact--list {
+  margin-top: 24px;
+  margin-left: 23px;
+  list-style: none;
+}
+
+.contact--item {
+  position: relative;
+}
+
+.contact--item:not(:nth-child(1)) {
+  margin-top: 3px;
+}
+
+.contact--item::before {
+  position: absolute;
+}
+
+.contact--item:nth-child(1)::before {
+  content: url("./assets/images/quote-location.png");
+  top: 4px;
+  left: -20px;
+}
+
+.contact--item:nth-child(2)::before {
+  content: url("./assets/images/quote-phone.png");
+  top: 4px;
+  left: -21.5px;
+}
+
+.contact--item:nth-child(3)::before {
+  content: url("./assets/images/quote-mail.png");
+  top: 8px;
+  left: -25px;
+}
+
+.contact--link {
+  font-family: "Lato-Regular";
+  font-size: 12px;
+  letter-spacing: -0.15px;
+  text-decoration: none;
+  color: #f0d8d9;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 22px 40px 18px 42px;
+  background: #2d303a;
+  margin: 0 auto;
+  width: 1020px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.footer--right {
+  margin-top: 8px;
+  text-decoration: none;
+  font-family: "Lato-Regular";
+  font-size: 12px;
+  letter-spacing: -0.25px;
+  color: #626984;
+}
+
+.footer--media_item:nth-child(n+2) {
+  margin-left: 4px;
+}
+
+.media--image:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+/*# sourceMappingURL=singolo3.css.map */
