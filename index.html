@@ -7,15 +7,15 @@
     </head>
     <body>
         <div class='wrapper'>
-            <header>
+            <header id = "home">
                 <nav class = "main_navigation">
                     <h1 class = "main_navigation--logo">SINGOLO<span>*</span></h1>
                     <ul class = "main_navigation--list">
-                        <li class= "main_navigation--item"><a class="main_navigation--link main_navigation--link-active" href= "#">Home</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Services</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Portfolio</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">About</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Contact</a></li>
+                        <li class= "main_navigation--item"><a class="main_navigation--link" href= "#home">Home</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#services_anchor">Services</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#portfolio_anchor">Portfolio</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#about_anchor">About</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#contact_anchor">Contact</a></li>
                     </ul>
                 </nav>
             </header>
@@ -28,6 +28,7 @@
                     <a class = "slider--arrow" href = "#"><img src = "./assets/images/arrow-right.png" alt = "slide-right"></a>
                 </section>
                 <section class = "services">
+                    <a class="nav_anchor" id = "services_anchor"></a>
                     <h2 class = "services--header">Our Services</h2>
                     <p class = "services--text">
                         <span class = "services--text_span">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor </span>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -60,6 +61,7 @@
                     </div>
                 </section>
                 <section class = "portfolio">
+                    <a class="nav_anchor" id = "portfolio_anchor"></a>
                     <h2 class = "portfolio--title">Portfolio</h2>
                     <p class = "portfolio--text">
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
@@ -86,6 +88,7 @@
                     </div>
                 </section>
                 <section class = "about">
+                    <a class="nav_anchor" id = "about_anchor"></a>
                     <h2 class = "about--title">About Us</h2>
                     <p class = "about--text about--text-first">
                         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor<br>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -126,7 +129,9 @@
                         </div>
                     </div>
                 </section>
-                <section class = "quote">
+                <section class = "quote" id = "quote">
+                    <a class="nav_anchor" id = "contact_anchor"></a>
+                    <div class="nav_anchor" id = "contact_anchor"></div>
                     <h2 class = "quote--title">Get a Quote</h2>
                     <p class = "quote--text">
                         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -161,5 +166,6 @@
                 </div>
             </footer>
         </div>
+        <script src = "./script.js"></script>
     </body>
 </html>

@@ -1,8 +1,8 @@
 @font-face {
-    font-family: "Lato-Bold";
-    src: url("./assets/fonts/Lato/Lato-Bold.ttf");
+  font-family: "Lato-Bold";
+  src: url("./assets/fonts/Lato/Lato-Bold.ttf");
 }
-  
+
 @font-face {
   font-family: "Lato-Black";
   src: url("./assets/fonts/Lato/Lato-Black.ttf");
@@ -37,6 +37,10 @@ h3 {
 }
 
 header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  z-index: 50;
   padding: 30px 40px 30px 40px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
@@ -143,8 +147,8 @@ header {
 }
 
 .slider--item1_image1 {
-    margin-top: 1px;
-    margin-left: 3px;
+  margin-top: 1px;
+  margin-left: 3px;
 }
 
 .slider--item1_image2 {
@@ -156,6 +160,7 @@ header {
 }
 
 .services {
+  position: relative;
   padding: 60px 18px 23px 41px;
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
@@ -188,10 +193,13 @@ header {
   grid-gap: 31px 0;
   margin: 42px 21px 40px 0px;
   padding: 0;
-  grid-template-columns: repeat(3, 300px);
-  grid-template-rows: repeat(2, 92px);
+  -ms-grid-columns: (300px)[3];
+      grid-template-columns: repeat(3, 300px);
+  -ms-grid-rows: (92px)[2];
+      grid-template-rows: repeat(2, 92px);
   -webkit-box-pack: justify;
-  justify-content: space-between;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
 }
 
 .services--item {
@@ -247,7 +255,9 @@ header {
   letter-spacing: -0.1px;
   color: #878da9;
 }
+
 .portfolio {
+  position: relative;
   padding: 60px 40px 67px 40px;
   border-bottom: 6px solid #323746;
   background-color: #2d303a;
@@ -277,8 +287,10 @@ header {
   display: -ms-grid;
   display: grid;
   margin-top: 18px;
-  grid-template-columns: repeat(4, 220px);
-  grid-template-rows: repeat(3, 187px);
+  -ms-grid-columns: (220px)[4];
+      grid-template-columns: repeat(4, 220px);
+  -ms-grid-rows: (187px)[3];
+      grid-template-rows: repeat(3, 187px);
   grid-gap: 20px 20px;
 }
 
@@ -320,6 +332,7 @@ header {
 }
 
 .about {
+  position: relative;
   padding: 60px 40px 62px 40px;
   border-bottom: 6.5px solid #ffffff;
   background-color: #f2f2f2;
@@ -342,12 +355,12 @@ header {
   color: #767e9e;
 }
 
-
 .about--team {
   margin-top: 44px;
 }
 
 .team {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -374,7 +387,6 @@ header {
   font-size: 12px;
   line-height: 21.5px;
   text-align: justify;
-  
   color: #767e9e;
 }
 
@@ -392,6 +404,7 @@ header {
 }
 
 .quote {
+  position: relative;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 58px 37px 36px 40px;
@@ -610,3 +623,9 @@ header {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
+
+.nav_anchor {
+  position: absolute;
+  top: -94px;
+}
+/*# sourceMappingURL=style.css.map */
