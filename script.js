@@ -126,10 +126,10 @@ form.addEventListener('submit', function(){
     let theme = 'Без темы';
     let description = 'Без описания';
     if (document.querySelectorAll('.quote_form--input')[2].value){
-        theme = document.querySelector('quote_form--input').value;
+        theme = document.querySelectorAll('.quote_form--input')[2].value;
     }
     if (document.querySelector('.quote_form--input-large').value){
-        description = document.querySelector('quote_form--input-large').value;
+        description = document.querySelector('.quote_form--input-large').value;
     }
     alert(`Письмо отправлено \n Тема: ${theme} \n Описание: ${description}`)
     //displayPopUp()
