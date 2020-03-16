@@ -17,13 +17,11 @@ navList.addEventListener('click', function (event) {
 
 
 ///////////////SLIDER
-let leftArrow = document.querySelector('.slider--arrow_left');
-let rightArrow = document.querySelector('.slider--arrow_right');
-let sliderList = document.querySelector('.slider--list');
-console.log(leftArrow)
-
-let slides = document.querySelectorAll('.slider--item');
-let slidesLength = slides.length;
+const leftArrow = document.querySelector('.slider--arrow_left');
+const rightArrow = document.querySelector('.slider--arrow_right');
+const sliderList = document.querySelector('.slider--list');
+const slides = document.querySelectorAll('.slider--item');
+const slidesLength = slides.length;
 let sliderOffsetLeft = slides[0].offsetLeft;
 let sliderCounter = 0;
 
@@ -33,8 +31,6 @@ rightArrow.addEventListener('click', function(){
         sliderCounter = 0;
     }
     sliderList.style.marginLeft = `${sliderOffsetLeft - 1020*sliderCounter}px`;
-    
-    console.log(sliderCounter);
 })
 
 leftArrow.addEventListener('click', function(){
@@ -48,7 +44,6 @@ leftArrow.addEventListener('click', function(){
 for (let i = 0; i < slidesLength; i++){
     let sliderItems = document.querySelectorAll(`.slider--item${i+1}_image`);
     let sliderItemMode = true;
-    //console.log(sliderItem1[0].src.slice(0,-6))
     sliderItems.forEach((element)=>{
         element.addEventListener('click', function(){
             if (sliderItemMode){
@@ -62,3 +57,5 @@ for (let i = 0; i < slidesLength; i++){
         })
     })
 }
+
+
