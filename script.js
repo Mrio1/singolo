@@ -111,3 +111,27 @@ portfolioGrid.addEventListener('click',function(event){
         }
     }
 })
+
+////////QUOTE
+const form = document.querySelector('.quote--form');
+const popUp = document.querySelector('.popUp');
+console.log(popUp)
+
+function displayPopUp(){
+    console.log(popUp);
+}
+
+form.addEventListener('submit', function(){
+    event.preventDefault();
+    let theme = 'Без темы';
+    let description = 'Без описания';
+    if (document.querySelectorAll('.quote_form--input')[2].value){
+        theme = document.querySelector('quote_form--input').value;
+    }
+    if (document.querySelector('.quote_form--input-large').value){
+        description = document.querySelector('quote_form--input-large').value;
+    }
+    alert(`Письмо отправлено \n Тема: ${theme} \n Описание: ${description}`)
+    //displayPopUp()
+})
+
