@@ -1,5 +1,4 @@
 const navList = document.querySelector(".main_navigation--list");
-
 let currentActiveNavLink;
 
 navList.addEventListener('click', function (event) {
@@ -58,4 +57,57 @@ for (let i = 0; i < slidesLength; i++){
     })
 }
 
+////////////PORTFOLIO
+function randomInteger(min, max) {
+    let rand = min - 0.5 + Math.random() * (max - min + 1);
+    return Math.round(rand);
+}
 
+function mixGridElements(){
+    const gridElements = document.querySelectorAll('.portfolio--samples_item');
+    let numberArr = [];
+    for (let i = 1; i <= gridElements.length; i++){
+        numberArr.push(i);
+    }
+    gridElements.forEach((element)=>{
+        let orderNum = randomInteger(0,numberArr.length-1);
+        numberArr = numberArr.slice(0, orderNum).concat(numberArr.slice(-orderNum));
+        element.style.order = numberArr[orderNum];
+    })
+}
+
+const filterItems = document.querySelectorAll(".filter--item");
+let currentActiveFilterItem = false;
+filterItems.forEach((element)=>{
+    element.addEventListener('click', function(event){
+        event.preventDefault();
+        if (!currentActiveFilterItem){
+            mixGridElements();
+            currentActiveFilterItem = element;
+            element.classList.add('filter--item-active');
+        } else if (currentActiveFilterItem != element){
+            mixGridElements();
+            element.classList.add('filter--item-active');
+            currentActiveFilterItem.classList.remove('filter--item-active');
+            currentActiveFilterItem = element;
+        }
+    })
+})
+
+const portfolioGrid = document.querySelector('.portfolio--samples');
+const portfolioSamples = document.querySelectorAll('.portfolio--samples_item');
+let activeSamplesItem = false;
+
+portfolioGrid.addEventListener('click',function(event){
+    let target = event.target;
+    if(target.classList.contains('portfolio--samples_item')){
+        if (!activeSamplesItem){
+            activeSamplesItem = target;
+            target.classList.add('portfolio--samples_item-active');
+        } else if (activeSamplesItem !== target){
+            target.classList.add('portfolio--samples_item-active');
+            activeSamplesItem.classList.remove('portfolio--samples_item-active');
+            activeSamplesItem = target;
+        }
+    }
+})

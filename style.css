@@ -332,6 +332,10 @@ header {
   grid-gap: 20px 20px;
 }
 
+.portfolio--samples_item-active {
+  border: 5px solid #f06c64;
+}
+
 .portfolio--samples_item:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
