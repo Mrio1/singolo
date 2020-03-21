@@ -1,18 +1,44 @@
 const navList = document.querySelector(".main_navigation--list");
+const navLinks = document.querySelectorAll(".main_navigation--link");
 let currentActiveNavLink;
+const header = document.querySelector('header');
+
+
+let sections = [];
+
+document.querySelectorAll('section').forEach((element)=>{
+    sections.push(element);
+});
+let sectionsCount = sections.length;
+
+
 
 navList.addEventListener('click', function (event) {
     if(event.target.classList.contains('main_navigation--link')){
-        if(!event.target.classList.contains('main_navigation--link-active')) {
-            let newActiveNavLink = event.target;
-            newActiveNavLink.classList.add(event.target.className+'-active');
-            if (currentActiveNavLink){
-                currentActiveNavLink.classList.remove('main_navigation--link-active');
-            }
-            currentActiveNavLink = newActiveNavLink;
-        }
-    } 
+        event.preventDefault();
+        let anchorId = event.target.getAttribute('href').slice(1);
+        document.getElementById(`${anchorId}`).scrollIntoView({behavior: 'smooth'});
+    }
 })
+
+document.addEventListener('scroll', function(){
+    for (let i =0; i < sections.length - 1; i++){
+        if(sections[i].getBoundingClientRect().top < 95 && sections[i].getBoundingClientRect().bottom > 95){
+            navLinks.forEach((element)=>{
+                element.classList.remove('main_navigation--link-active');
+            });
+            document.querySelector(`a[href="#${sections[i].classList[0]}_anchor"`).classList.add('main_navigation--link-active');
+        }
+    }
+    if (window.innerHeight + scrollY >= document.body.scrollHeight){
+        navLinks.forEach((element)=>{
+            element.classList.remove('main_navigation--link-active');
+        });
+        document.querySelector(`a[href="#${sections[sectionsCount-1].classList[0]}_anchor"`).classList.add('main_navigation--link-active');
+    }
+});
+
+
 
 
 ///////////////SLIDER
@@ -118,10 +144,10 @@ const popUp = document.querySelector('.popUp');
 console.log(popUp)
 
 function displayPopUp(){
-    console.log(popUp);
+    
 }
 
-form.addEventListener('submit', function(){
+form.addEventListener('click', function(){
     event.preventDefault();
     let theme = 'Без темы';
     let description = 'Без описания';
@@ -131,7 +157,10 @@ form.addEventListener('submit', function(){
     if (document.querySelector('.quote_form--input-large').value){
         description = document.querySelector('.quote_form--input-large').value;
     }
-    alert(`Письмо отправлено \n Тема: ${theme} \n Описание: ${description}`)
-    //displayPopUp()
+    popUp.innerHTML = `Письмо отправлено<br> Тема: ${theme}<br>Описание: ${description}`;
+    popUp.style.cssText = 'display: block';
+    popUp.style.cssText += `left: calc(50% - ${popUp.getBoundingClientRect().width / 2}px); top: calc(20% - ${popUp.getBoundingClientRect().height / 2}px)`;
+
 })
+
 
