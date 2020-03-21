@@ -11,23 +11,27 @@
                 <nav class = "main_navigation">
                     <h1 class = "main_navigation--logo">SINGOLO<span>*</span></h1>
                     <ul class = "main_navigation--list">
-                        <li class= "main_navigation--item"><a class="main_navigation--link main_navigation--link-active" href= "#">Home</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Services</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Portfolio</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">About</a></li>
-                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#">Contact</a></li>
+                        <li class= "main_navigation--item"><a class="main_navigation--link" href= "#slider_anchor">Home</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#services_anchor">Services</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#portfolio_anchor">Portfolio</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#about_anchor">About</a></li>
+                        <li class= "main_navigation--item main_navigation--item-circle"><a class= "main_navigation--link" href= "#quote_anchor">Contact</a></li>
                     </ul>
                 </nav>
             </header>
             <main>
+                <a class="nav_anchor" id = "slider_anchor"></a>
                 <section class = "slider">
-                    <a class ='slider--arrow' href='#'><img src='./assets/images/arrow-left.png' alt="slide-left"></a>
+                    <a class ='slider--arrow slider--arrow_left' href='#'><img src='./assets/images/arrow-left.png' alt="slide--arrow-left"></a>
                     <ul class="slider--list">
-                        <li class = "slider--item"><img class = "slider--item1_image1" src = "./assets/images/iPhone-vertical.png" alt = "iPhone-verticale-image"><img class = "slider--item1_image2"  src = "./assets/images/iPhone-horizontal.png" alt = "iPhone-horizontal-image"></li>
+                        <li class = "slider--item slider--item1"><img class = "slider--item1_image1 slider--item1_image slider--item_image slider--item_image-active" src = "./assets/images/iPhone-vertical-on.png" alt = "iPhone-verticale-image"><img class = "slider--item1_image2  slider--item1_image slider--item_image slider--item_image-active"  src = "./assets/images/iPhone-horizontal-on.png" alt = "iPhone-horizontal-image"></li>
+                        <li class = "slider--item slider--item_2"><img class = "slider--item2_image slider--item_image slider--item_image-active" src = "./assets/images/slider-item2-on.png" alt = "Slider Item 2">
+                        </li>
                     </ul>
-                    <a class = "slider--arrow" href = "#"><img src = "./assets/images/arrow-right.png" alt = "slide-right"></a>
+                    <a class = "slider--arrow slider--arrow_right" href = "#"><img src = "./assets/images/arrow-right.png" alt = "slide-right"></a>
                 </section>
                 <section class = "services">
+                    <a class="nav_anchor" id = "services_anchor"></a>
                     <h2 class = "services--header">Our Services</h2>
                     <p class = "services--text">
                         <span class = "services--text_span">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor </span>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -60,12 +64,13 @@
                     </div>
                 </section>
                 <section class = "portfolio">
+                    <a class="nav_anchor" id = "portfolio_anchor"></a>
                     <h2 class = "portfolio--title">Portfolio</h2>
                     <p class = "portfolio--text">
                         Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.
                     </p>
                     <div class = "portfolio--filter filter">
-                        <a class = "filter--item filter--item-active" href = "#">All</a>
+                        <a class = "filter--item" href = "#">All</a>
                         <a class = "filter--item" href = "#">Web Design</a>
                         <a class = "filter--item" href = "#">Graphic Design</a>
                         <a class = "filter--item" href = "#">Artwork</a>
@@ -86,6 +91,7 @@
                     </div>
                 </section>
                 <section class = "about">
+                    <a class="nav_anchor" id = "about_anchor"></a>
                     <h2 class = "about--title">About Us</h2>
                     <p class = "about--text about--text-first">
                         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor<br>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -127,6 +133,7 @@
                     </div>
                 </section>
                 <section class = "quote">
+                    <a class="nav_anchor" id = "quote_anchor"></a>
                     <h2 class = "quote--title">Get a Quote</h2>
                     <p class = "quote--text">
                         Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
@@ -135,8 +142,8 @@
                         <form class = "quote--form quote_form" id = "quote_form" action = "#">
                             <input class = "quote_form--input" type = "text" placeholder = "Name (Required)" name = "name" required>
                             <input class = "quote_form--input" type = "email" placeholder = "Email (Required)" name = "email" required>
-                            <input class = "quote_form--input" type = "text" placeholder = "Subject" required>
-                            <textarea class="quote_form--input quote_form--input-large" type="text" placeholder = "Describe your project in detail..." name="describe" required></textarea>
+                            <input class = "quote_form--input" type = "text" placeholder = "Subject">
+                            <textarea class="quote_form--input quote_form--input-large" type="text" placeholder = "Describe your project in detail..." name="describe"></textarea>
                             <button class = "quote_form--button" type = "submit" value = "Submit">Submit</button>
                         </form>
                         <div class = "quote--contact contact">
@@ -161,5 +168,14 @@
                 </div>
             </footer>
         </div>
+        <div class = "popUp">
+            <div class="popUp--message">
+                <p class="popUp--text"></p>
+                <input class="popUp--message_button" type="button" value = "OK">
+            </div>
+        </div>
+        
+        <script src = "./script.js"></script>
+
     </body>
 </html>
