@@ -24,8 +24,8 @@
                 <section class = "slider">
                     <a class ='slider--arrow slider--arrow_left' href='#'><img src='./assets/images/arrow-left.png' alt="slide--arrow-left"></a>
                     <ul class="slider--list">
-                        <li class = "slider--item slider--item1"><img class = "slider--item1_image1 slider--item1_image" src = "./assets/images/iPhone-vertical-on.png" alt = "iPhone-verticale-image"><img class = "slider--item1_image2  slider--item1_image"  src = "./assets/images/iPhone-horizontal-on.png" alt = "iPhone-horizontal-image"></li>
-                        <li class = "slider--item slider--item_2"><img class = "slider--item2_image" src = "./assets/images/slider-item2-on.png" alt = "Slider Item 2">
+                        <li class = "slider--item slider--item1"><img class = "slider--item1_image1 slider--item1_image slider--item_image slider--item_image-active" src = "./assets/images/iPhone-vertical-on.png" alt = "iPhone-verticale-image"><img class = "slider--item1_image2  slider--item1_image slider--item_image slider--item_image-active"  src = "./assets/images/iPhone-horizontal-on.png" alt = "iPhone-horizontal-image"></li>
+                        <li class = "slider--item slider--item_2"><img class = "slider--item2_image slider--item_image slider--item_image-active" src = "./assets/images/slider-item2-on.png" alt = "Slider Item 2">
                         </li>
                     </ul>
                     <a class = "slider--arrow slider--arrow_right" href = "#"><img src = "./assets/images/arrow-right.png" alt = "slide-right"></a>
@@ -168,7 +168,13 @@
                 </div>
             </footer>
         </div>
-        <div class="popUp"></div>
+        <div class = "popUp">
+            <div class="popUp--message">
+                <p class="popUp--text"></p>
+                <input class="popUp--message_button" type="button" value = "Закрыть">
+            </div>
+        </div>
+        
         <script src = "./script.js"></script>
 
     </body>

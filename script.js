@@ -2,16 +2,13 @@ const navList = document.querySelector(".main_navigation--list");
 const navLinks = document.querySelectorAll(".main_navigation--link");
 let currentActiveNavLink;
 const header = document.querySelector('header');
-
-
+let headerHeight = header.getBoundingClientRect().height + 5;
 let sections = [];
 
 document.querySelectorAll('section').forEach((element)=>{
     sections.push(element);
 });
 let sectionsCount = sections.length;
-
-
 
 navList.addEventListener('click', function (event) {
     if(event.target.classList.contains('main_navigation--link')){
@@ -22,23 +19,21 @@ navList.addEventListener('click', function (event) {
 })
 
 document.addEventListener('scroll', function(){
-    for (let i =0; i < sections.length - 1; i++){
-        if(sections[i].getBoundingClientRect().top < 95 && sections[i].getBoundingClientRect().bottom > 95){
+    for (let i =0; i < sections.length; i++){
+        if(sections[i].getBoundingClientRect().top < headerHeight && sections[i].getBoundingClientRect().bottom > headerHeight){
             navLinks.forEach((element)=>{
                 element.classList.remove('main_navigation--link-active');
             });
             document.querySelector(`a[href="#${sections[i].classList[0]}_anchor"`).classList.add('main_navigation--link-active');
         }
     }
-    if (window.innerHeight + scrollY >= document.body.scrollHeight){
+    if (window.innerHeight + scrollY >= document.body.scrollHeight-1){
         navLinks.forEach((element)=>{
             element.classList.remove('main_navigation--link-active');
         });
         document.querySelector(`a[href="#${sections[sectionsCount-1].classList[0]}_anchor"`).classList.add('main_navigation--link-active');
     }
 });
-
-
 
 
 ///////////////SLIDER
@@ -66,22 +61,20 @@ leftArrow.addEventListener('click', function(){
     sliderList.style.marginLeft = `${sliderOffsetLeft - 1020*sliderCounter}px`;
 });
 
-for (let i = 0; i < slidesLength; i++){
-    let sliderItems = document.querySelectorAll(`.slider--item${i+1}_image`);
-    let sliderItemMode = true;
-    sliderItems.forEach((element)=>{
-        element.addEventListener('click', function(){
-            if (sliderItemMode){
-                element.src = element.src.slice(0,-6)+'of.png';
-                sliderItemMode = false;
-            } else {
-                element.src = element.src.slice(0,-6)+'on.png';
-                sliderItemMode = true;
-            }
-            
-        })
+let sliderItemsImages = document.querySelectorAll(`.slider--item_image`);
+console.log(sliderItemsImages);
+sliderItemsImages.forEach((element)=>{
+    element.addEventListener('click', function(){
+        if (element.classList.contains('slider--item_image-active')){
+            element.src = element.src.slice(0,-6)+'of.png';
+            element.classList.remove('slider--item_image-active')
+        } else {
+            element.src = element.src.slice(0,-6)+'on.png';
+            element.classList.add('slider--item_image-active');
+        }
+        
     })
-}
+})
 
 ////////////PORTFOLIO
 function randomInteger(min, max) {
@@ -141,13 +134,18 @@ portfolioGrid.addEventListener('click',function(event){
 ////////QUOTE
 const form = document.querySelector('.quote--form');
 const popUp = document.querySelector('.popUp');
+const popUpMessage = document.querySelector('.popUp--text');
+let popUpButton = document.querySelector('.popUp--message_button');
 console.log(popUp)
 
-function displayPopUp(){
-    
+function isPopUpMessageClick(event){
+    if (!event.target.classList.contains('popUp--message')){
+        console.log("!!!!!!!!!")
+        //popUp.style.cssText = 'display: none';
+    }
 }
 
-form.addEventListener('click', function(){
+form.addEventListener('submit', function(){
     event.preventDefault();
     let theme = 'Без темы';
     let description = 'Без описания';
@@ -157,10 +155,22 @@ form.addEventListener('click', function(){
     if (document.querySelector('.quote_form--input-large').value){
         description = document.querySelector('.quote_form--input-large').value;
     }
-    popUp.innerHTML = `Письмо отправлено<br> Тема: ${theme}<br>Описание: ${description}`;
-    popUp.style.cssText = 'display: block';
-    popUp.style.cssText += `left: calc(50% - ${popUp.getBoundingClientRect().width / 2}px); top: calc(20% - ${popUp.getBoundingClientRect().height / 2}px)`;
+    popUpMessage.innerHTML = `Письмо отправлено<br> Тема: ${theme}<br>Описание: ${description}`;
+    popUp.style.cssText = 'display: flex';
+    
+});
 
+popUpButton.addEventListener('click', function(){
+    popUp.style.display = 'none';
+    form.reset();
+});
+
+popUp.addEventListener('click',function(){
+    if(!event.target.classList.contains('.popUp--message')){
+        popUp.style.display = 'none';
+        form.reset();
+    }
 })
+
 
 

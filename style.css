@@ -136,6 +136,8 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-transition: margin-left 1.5s;
+  transition: margin-left 1.5s;
 }
 
 .slider--item {
@@ -235,13 +237,11 @@ header {
   grid-gap: 31px 0;
   margin: 42px 21px 40px 0px;
   padding: 0;
-  -ms-grid-columns: (300px)[3];
-      grid-template-columns: repeat(3, 300px);
-  -ms-grid-rows: (92px)[2];
-      grid-template-rows: repeat(2, 92px);
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: repeat(2, 92px);
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
 }
 
 .services--item {
@@ -329,10 +329,8 @@ header {
   display: -ms-grid;
   display: grid;
   margin-top: 18px;
-  -ms-grid-columns: (220px)[4];
-      grid-template-columns: repeat(4, 220px);
-  -ms-grid-rows: (187px)[3];
-      grid-template-rows: repeat(3, 187px);
+  grid-template-columns: repeat(4, 220px);
+  grid-template-rows: repeat(3, 187px);
   grid-gap: 20px 20px;
 }
 
@@ -673,18 +671,49 @@ header {
 
 .popUp {
   position: fixed;
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
   font-size: 24px;
-  top: 100px;
-  width: 40%;
-  min-height: 20%;
-  border: 1px solid #000;
-  color: #333;
+  width: 100%;
+  height: 100%;
   background: #ECF5E4;
   opacity: 0.85;
-  display: none;
+  z-index: 50;
 }
 
-.popUp::first-line {
+.popUp--message {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 40%;
+  min-height: 40%;
+  padding: 10px;
+  background: #81dd09;
+}
+
+.popUp--message::first-line {
   text-align: center;
+  font-weight: 800;
+}
+
+.popUp--message_button {
+  width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
 }
 /*# sourceMappingURL=style.css.map */
