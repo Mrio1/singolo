@@ -5,6 +5,17 @@ const header = document.querySelector('header');
 let headerHeight = header.getBoundingClientRect().height + 5;
 let sections = [];
 
+const leftArrow = document.querySelector('.slider--arrow_left');
+const rightArrow = document.querySelector('.slider--arrow_right');
+const sliderList = document.querySelector('.slider--list');
+const slides = document.querySelectorAll('.slider--item');
+let slideLength = slides[0].getBoundingClientRect().width;
+const slidesLength = slides.length;
+let sliderOffsetLeft = slides[0].offsetLeft;
+let sliderCounter = 0;
+
+window.addEventListener('resize', ()=>{slideLength = slides[0].getBoundingClientRect().width});
+
 document.querySelectorAll('section').forEach((element)=>{
     sections.push(element);
 });
@@ -35,22 +46,13 @@ document.addEventListener('scroll', function(){
     }
 });
 
-
 ///////////////SLIDER
-const leftArrow = document.querySelector('.slider--arrow_left');
-const rightArrow = document.querySelector('.slider--arrow_right');
-const sliderList = document.querySelector('.slider--list');
-const slides = document.querySelectorAll('.slider--item');
-const slidesLength = slides.length;
-let sliderOffsetLeft = slides[0].offsetLeft;
-let sliderCounter = 0;
-
 rightArrow.addEventListener('click', function(){
     sliderCounter++;
     if (sliderCounter >= slidesLength){
         sliderCounter = 0;
     }
-    sliderList.style.marginLeft = `${sliderOffsetLeft - 1020*sliderCounter}px`;
+    sliderList.style.marginLeft = `${sliderOffsetLeft - slideLength*sliderCounter}px`;
 })
 
 leftArrow.addEventListener('click', function(){
@@ -58,11 +60,10 @@ leftArrow.addEventListener('click', function(){
     if (sliderCounter < 0){
         sliderCounter = slidesLength - 1;
     }
-    sliderList.style.marginLeft = `${sliderOffsetLeft - 1020*sliderCounter}px`;
+    sliderList.style.marginLeft = `${sliderOffsetLeft - slideLength*sliderCounter}px`;
 });
 
 let sliderItemsImages = document.querySelectorAll(`.slider--item_image`);
-console.log(sliderItemsImages);
 sliderItemsImages.forEach((element)=>{
     element.addEventListener('click', function(){
         if (element.classList.contains('slider--item_image-active')){
@@ -136,12 +137,9 @@ const form = document.querySelector('.quote--form');
 const popUp = document.querySelector('.popUp');
 const popUpMessage = document.querySelector('.popUp--text');
 let popUpButton = document.querySelector('.popUp--message_button');
-console.log(popUp)
 
 function isPopUpMessageClick(event){
     if (!event.target.classList.contains('popUp--message')){
-        console.log("!!!!!!!!!")
-        //popUp.style.cssText = 'display: none';
     }
 }
 
