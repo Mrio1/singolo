@@ -4,10 +4,13 @@
         <meta charset = "utf-8">
         <title>Singolo</title>
         <link rel = 'stylesheet' href = 'style.css'>
+        <meta name="viewport" content="width=device-width">
     </head>
     <body>
         <div class='wrapper'>
             <header>
+                <input class="toggle" id="toggle" type="checkbox">
+                <label class="toggle_container" for="toggle"></label>
                 <nav class = "main_navigation">
                     <h1 class = "main_navigation--logo">SINGOLO<span>*</span></h1>
                     <ul class = "main_navigation--list">
@@ -25,7 +28,7 @@
                     <a class ='slider--arrow slider--arrow_left' href='#'><img src='./assets/images/arrow-left.png' alt="slide--arrow-left"></a>
                     <ul class="slider--list">
                         <li class = "slider--item slider--item1"><img class = "slider--item1_image1 slider--item1_image slider--item_image slider--item_image-active" src = "./assets/images/iPhone-vertical-on.png" alt = "iPhone-verticale-image"><img class = "slider--item1_image2  slider--item1_image slider--item_image slider--item_image-active"  src = "./assets/images/iPhone-horizontal-on.png" alt = "iPhone-horizontal-image"></li>
-                        <li class = "slider--item slider--item_2"><img class = "slider--item2_image slider--item_image slider--item_image-active" src = "./assets/images/slider-item2-on.png" alt = "Slider Item 2">
+                        <li class = "slider--item slider--item2"><img class = "slider--item2_image slider--item_image slider--item_image-active" src = "./assets/images/slider-item2-on.png" alt = "Slider Item 2">
                         </li>
                     </ul>
                     <a class = "slider--arrow slider--arrow_right" href = "#"><img src = "./assets/images/arrow-right.png" alt = "slide-right"></a>
@@ -34,7 +37,7 @@
                     <a class="nav_anchor" id = "services_anchor"></a>
                     <h2 class = "services--header">Our Services</h2>
                     <p class = "services--text">
-                        <span class = "services--text_span">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor </span>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                     </p>
                     <div class = "services--grid">
                         <div class= "services--item">
@@ -43,7 +46,7 @@
                         </div>
                         <div class= "services--item">
                             <h3 class = "services--item_header">Inovative Ideas</h3>
-                            <p class = "services--item_text">Quisque luctus, quam eget molestie com- modo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
+                            <p class = "services--item_text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                         </div>
                         <div class = "services--item">
                             <h3 class = "services--item_header">Love Is The Answer</h3>
@@ -51,11 +54,11 @@
                         </div>
                         <div class = "services--item">
                             <h3 class = "services--item_header">Responsive Layout</h3>
-                            <p class = "services--item_text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Prae- sent elit leo.</p>
+                            <p class = "services--item_text">Sed porttitor placerat rhoncus. In at nunc tellus. Maecenas blandit nunc ligula. Praesent elit leo.</p>
                         </div>
                         <div class = "services--item">
                             <h3 class = "services--item_header">24 / 7 Support</h3>
-                            <p class = "services--item_text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellen- tesque egestas venenatis lorem .</p>
+                            <p class = "services--item_text">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem erat. Pellentesque egestas venenatis lorem .</p>
                         </div>
                         <div class = "services--item">
                             <h3 class = "services--item_header">Feel Like A Star</h3>
@@ -94,13 +97,13 @@
                     <a class="nav_anchor" id = "about_anchor"></a>
                     <h2 class = "about--title">About Us</h2>
                     <p class = "about--text about--text-first">
-                        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor<br>ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
+                        Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
                     </p>
                     <div class = "about--team team">
                         <div class = "team--item">
-                            <img src = "./assets/images/team-member1.png" alt="Team member">
+                            <img class = "team--item_image" src = "./assets/images/team-member1.png" alt="Team member">
                             <h3 class = "team--item_title">Adam Jensen</h3>
-                            <p class = "team--item_text">Quisque luctus, quam eget molestie commodo, lacus purus <span>cursus purus, nec rutrum tellus dolor id lorem.</span></p>
+                            <p class = "team--item_text">Quisque luctus, quam eget molestie commodo, lacus purus cursus purus, nec rutrum tellus dolor id lorem.</p>
                             <div class = "media team--media">
                                 <a href="" class = "media--item"><img class = "media--image" src= "./assets/images/facebook.png" alt = "facebook"></a>
                                 <a href="" class = "media--item"><img class = "media--image" src= "./assets/images/google.png" alt = "google"></a>
@@ -109,7 +112,7 @@
                             </div>
                         </div>
                         <div class = "team--item">
-                            <img src = "./assets/images/team-member2.png" alt="Team member">
+                            <img class = "team--item_image" src = "./assets/images/team-member2.png" alt="Team member">
                             <h3 class = "team--item_title">Desmond Miles</h3>
                             <p class = "team--item_text">Curabitur vestibulum eget mauris quis laoreet. Phasellus in quam laoreet, viverra lacus ut, ultrices velit.</p>
                             <div class = "media team--media">
@@ -120,7 +123,7 @@
                             </div>
                         </div>
                         <div class = "team--item">
-                            <img src = "./assets/images/team-member3.png" alt="Team member">
+                            <img class = "team--item_image" src = "./assets/images/team-member3.png" alt="Team member">
                             <h3 class = "team--item_title">Scolara Visari</h3>
                             <p class = "team--item_text">Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis. Quisque condimentum.</p>
                             <div class = "media team--media">
@@ -140,15 +143,15 @@
                     </p>
                     <div class = "quote--flex_box">
                         <form class = "quote--form quote_form" id = "quote_form" action = "#">
-                            <input class = "quote_form--input" type = "text" placeholder = "Name (Required)" name = "name" required>
-                            <input class = "quote_form--input" type = "email" placeholder = "Email (Required)" name = "email" required>
+                            <input class = "quote_form--input" type = "text" placeholder = "Name (required)" name = "name" required>
+                            <input class = "quote_form--input" type = "email" placeholder = "Email (required)" name = "email" required>
                             <input class = "quote_form--input" type = "text" placeholder = "Subject">
                             <textarea class="quote_form--input quote_form--input-large" type="text" placeholder = "Describe your project in detail..." name="describe"></textarea>
-                            <button class = "quote_form--button" type = "submit" value = "Submit">Submit</button>
+                            <button class = "quote_form--button" type = "submit" value = "Submit">SEND</button>
                         </form>
                         <div class = "quote--contact contact">
                             <h3 class = "contact--title">Contact Information</h3>
-                            <p class = "contact--text">Quisque hendrerit purus dapibus, ornare nibh vitae, viver-<br>ra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
+                            <p class = "contact--text">Quisque hendrerit purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.</p>
                             <ul class = "contact--list">
                                 <li class = "contact--item"><a class = "contact--link" href = "#">Elm St. 14/05 Lost City</a></li>
                                 <li class = "contact--item"><a class = "contact--link" href = "tel:035283318635">03528 331 86 35</a></li>
@@ -159,7 +162,7 @@
                 </section>
             </main>
             <footer class = "footer">
-                <a class = "footer--right" href="#">© Copyright 2013 · by PSDchat.com</a>
+                <a class = "footer--right" href="#">© Copyright 2013</a>
                 <div class = "media footer--media">
                     <a href = "#" class = "media--item footer--media_item"><img class = "media--image" src = "./assets/images/facebook.png" alt = "facebook"></a>
                     <a href = "#" class = "media--item footer--media_item"><img class = "media--image" src = "./assets/images/google.png" alt = "google"></a>
@@ -176,6 +179,5 @@
         </div>
         
         <script src = "./script.js"></script>
-
     </body>
 </html>
